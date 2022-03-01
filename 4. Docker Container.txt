@@ -1,0 +1,28 @@
+Jika docker image itu seperti installer, maka docker container miripseperti aplikasi
+hasil installernya.
+Satu docker image bisa digunakan untuk membuat beberapa container, asalkan
+nama containernya berbeda.
+Docker image yang sudah dijadikan sebagai docker container tidak bisa dihapus.
+(Hal ini karena sebenarnya docker container tidak mengcopy isi dari Docker Image, tapi hanya menggunakan isinya saja)
+
+Status Container:
+Saat membuat container, secara default container tersebut belum berjalan (Kita harus menjalankannya terlebih dahulu)
+
+Melihat container:
+-Melihat semua container (berjalan atau tidak):
+docker container ls -a
+
+-Melihat container yang hanya sedang berjalan:
+docker container ls
+
+Membuat container:
+docker container create --name namaContainer namaImage:tag
+
+Menjalankan container:
+docker container start containerId/namaConatainer
+
+Menghentikan Container:
+docker container stop containerId/namaConatainer
+
+Menghapus Container:
+docker container rm containerId/namaConatainer

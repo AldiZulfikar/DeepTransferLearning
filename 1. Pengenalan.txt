@@ -1,0 +1,7 @@
+Docker adalah salah satu container manager
+
+Arstektur Docker:
+-Docker menggunakan arsitektur client-server
+-Docker client berkomunikasi dengan Docker Daemon(Server)
+-Docker Client dan Docker Daemon berkomunikasi menggunakan REST API
+

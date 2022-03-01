@@ -1,0 +1,12 @@
+Docker Image -> Mirip seperti installer aplikasi, dimana di dalam Docker Image terdapat aplikasi dan dependency
+Sebelum kita bisa menjalankan aplikasi di Docker, kita perlu memastikan memiliki Docker Image aplikasi tersebut
+
+Perintah untuk melihat docker image:
+docker image ls
+
+Untuk mendownload docker image dari docker registry, bisa menggunakan perintah:
+docker image pull namaImage:tag
+*tag adalah versi dari image, jika tidak memasukan tag maka akan melakukan download versi latest
+
+Untuk menghapus docker image bisa menggunakan perintah:
+docker image rm namaImage:tag 
