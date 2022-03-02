@@ -1,0 +1,15 @@
+Saat menjalankan container, container tersebut akan terisolasi di dalam docker
+
+Hal itu artinya sistem Host(Misal laptop kita), tidak bisa mengakses aplikasi yang ada di dalam container
+secara langsung, salah satu cara untuk mengaksesnya adalah dengan menggunakan container exec untuk masuk ke dalam containernya.
+
+Docker juga memiliki kemampuan untuk melakukan port forwarding, yaitu meneruskan sebuah port
+yang terdapat di sistem Hostnya ke dalam Docker container
+
+Cara ini cocok jika kita ingin mengekspose port yang terdapat di container ke luar melalui sistem Hostnya
+
+Perintah untuk melakukan port forwading:
+docker container create --name namaContainer --publish postHost:portContainer namaImage:tag
+*Note: port forwarding hanya bisa dilakukan pada container yang baru dibuat, jika sudah terlanjur membuat maka harus di hapus terlebih dahulu
+
+Jika kita ingin melakukan port forwarding lebih dari satu, kita bisa tambahkan dua kali parameter --publish (--publish juga bisa disingkat menggunakan -p)

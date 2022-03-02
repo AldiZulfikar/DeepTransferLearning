@@ -1,0 +1,14 @@
+Saat membuat aplikasi, dengan menggunakan Environment variable adalah salah satu teknik agar konfigurasi aplikasi
+bisa diubah secara dinamis
+
+Dengan menggunakan Environment variable, kita bisa mengubah konfigurasi aplikasi, tanpa harus mengubah kode aplikasinya lagi
+
+Docker container memiliki parameter yang bisa digunakan untuk mengirim environment variable ke aplikasi yang terdapat di dalam container
+
+Perintah untuk menambahkan environment variable:
+docker container create --name namaContainer --env KEY1="value" --env KEY2="value" namaImage:tag
+*"petik dua" digunakan jika terdapat spasi di dalam env variablenya
+*untuk melihat env kita bisa melihatnya pada docker hub (Contohnya adalah mongoDb)
+
+contoh :
+docker container create --name contohMongo --publish 27017:27017 --env MONGO_INITDB_ROOT_USERNAME=aldi --env MONGO_INITDB_ROOT_PASSWORD=aldi mongo:latest 

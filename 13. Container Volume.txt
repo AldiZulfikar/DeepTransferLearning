@@ -1,0 +1,11 @@
+Volume yang sudah dibuat dapat kita gunakan di container
+
+Keuntungan menggunakan volume adalah, jika container kita hapus, data akan tetap aman di volume
+
+cara menggunakan volume di container sama dengan menggunakan bind mounts, kita menggunakan parameter
+--mount, namun dengan menggunakan type=volume dan source=namaVolume
+
+Contoh :
+buat volume terlebih dahulu
+docker volume create mongodata
+docker container create --name contohMongo3 --publish 27019:27017 --mount "type=volume,source=mongodata,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=aldi --env MONGO_INITDB_ROOT_PASSWORD=aldi mongo:latest 

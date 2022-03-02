@@ -1,0 +1,4 @@
+Container Stats digunakan untuk melihat detail dari penggunaan resource untuk setiap containernya
+
+Perintah untuk menggunakan Container Stats:
+docker container Stats

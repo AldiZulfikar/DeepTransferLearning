@@ -1,0 +1,18 @@
+Saat membuat container, secara default akan menggunakan semua CPU dan Memory yang diberikan ke Docker (Windows dan Mac)
+dan akan menggunakan semua CPU dan Memory yang tersedia di sistem Host (Linux)
+
+Problem yang akan terjadi adalah jika container terlalu banyak memakan CPU dan Memory, maka dapat berdampak terhadap performa container lain, atau bahkan ke sistem Host
+
+Oleh karena itu, ada baiknya ketika kita membuat container, kita memberikan resource limit terhadap container tersebut.
+
+Untuk mengatur resource Memory:
+-kita dapat menambahkan --memory diikuti dengan angka memory untuk digunakan
+-Kita bisa menambahkan dalam bentuk b (bytes), k (Kilo bytes), m (mega bytes), atau g (giga bytes).
+-Misal 100m atau 100g
+
+Untuk mengatur resource CPU:
+-Kita dapat menambahkan --cpus diikuti dengan angka cpu untuk digunakan
+-Misal 1.5 atau 0.5 ataupun 2
+
+Contoh:
+docker container create --name smallNginx --publish 9091:80 --memory 100m --cpus 0.5 nginx:latest

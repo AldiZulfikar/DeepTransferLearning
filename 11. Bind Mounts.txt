@@ -1,0 +1,24 @@
+Bind Mounts merupakan kemampuan melakukan mounting (sharing) file atau folder yang terdapat
+disistem host ke container yang terdapat di docker
+
+Fitur ini sangat berguna ketika misalnya kita ingin mengirim konfigurasi dari luar container, atau misal
+menyimpan data yang dibuat di aplikasi di dalam container ke dalam folder di sistem host.
+
+Jika folder atau file tidak ada di sistem host, secara otomatis akan dibuatkan oleh docker.
+
+Untuk melakukan mounting, kita bisa menggunakan parameter --mount ketika membuat container
+
+Isi dari parameter --mount memiliki aturan sendiri:
+Parameter       | keterangan
+type            | Tipe mount, bind atau volume
+source          | Lokasi file atau folder di sistem host
+destination     | Lokasi file atau folder di container
+readonly        | Jika ada, maka file atau folder hanya bisa dibaca di container, tidak bisa ditulis
+
+Perintah untuk melakukan mouting:
+docker container create --name namaContainer --mount "type=bind,source=folder,destination=folder,readonly" namaImage:tag
+
+Contoh :
+docker container create --name contohMongo2 --publish 27018:27017 --mount "type=bind,source=/home/aldi/Documents/Belajar_Docker/mongo-data,destination=/data/db" --env MONGO_INITDB_ROOT_USERNAME=aldi --env MONGO_INITDB_ROOT_PASSWORD=aldi mongo:latest 
+
+*lihat folder mongo-data untuk melihat hasil mounting

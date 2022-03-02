@@ -1,0 +1,9 @@
+Container log digunakan ketika kita ingin melihat detail log dari aplikasi saat terjadi permasalahan
+
+Hal ini dilakukan untuk melihat detail kejadian yang terjadi di aplikasi, sehingga dapat memudahkan kita ketika terjadi masalah
+
+Melihat Container log:
+docker container logs containerId/namaContainer
+
+Jika ingin melihat log secara realtime:
+docker container logs -f containerId/namaContainer

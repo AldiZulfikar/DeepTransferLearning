@@ -1,0 +1,21 @@
+Fitur bind mounts sudah ada sejak docker versi awal, di versi terbaru ini di rekomendasikan menggunakan docker volume
+
+Docker volume mirip dengan Bind Mounts, bedanya adalah terdapat management volume, dimana kita bisa membuat Volume, melihat
+Volume, dan menghapus Volume
+
+Volume sendiri bisa dianggap storage yang digunakan untuk menyimpan data, bedanya denganBind Mounts, pada bind mounts, data disimpan pada sistem host,
+sedangkan pada volume, data dimanage oleh docker
+
+Melihat Docker Volume:
+Volume sebenarnya akan dibuat secara default oleh docker jika kita tidak membuatnya secara manual.
+
+-Perintah untuk melihat docker volume:
+docker volume ls
+
+-Perintah untuk membuat volume:
+docker volume create namaVolume
+
+-Perintah untuk menghapus volume:
+docker volume rc namaVolume
+*untuk menghapus volume kita harus memastikan volume tersebut tidak digunakan (Stop container dan hapus container terlebih dahulu)
+
