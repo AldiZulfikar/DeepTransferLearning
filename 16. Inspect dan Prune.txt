@@ -1,3 +1,11 @@
+Docker inspect digunakan untuk melihat detail yang lebih jelas pada image, container, volume dan juga network
+
+Cara menggunakan inspect:
+-Pada image: docker image inspect namaImage
+-pada container: docker container inspect namaContainer
+-pada volume: docker volume inspect namaVolume
+-pada network: docker network inspect namaNetwork
+
 Prune digunakan untuk menghapus hal yang tidak digunakan lagi di dalam docker seperti image, volume, container, dan juga network
 
 Perintah Prune:
