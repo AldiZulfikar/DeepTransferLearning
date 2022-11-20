@@ -1,0 +1,24 @@
+Saat kita membuat container di docker, secara default container akan saling terisolasi satu sama lain, jadi kita mencoba memanggil antar container, bisa
+dipastikan bahwa kita tidak akan bisa melakukannya
+
+Docker memiliki fitur network untuk membuat jaringan di dalam docker, Jadi kita dapat mengkoneksikan antar container dalam satu jaringan yang sama
+
+Jika beberapa container terdapat dalam jaringan yang sama, maka secara otomatis container tersebut bisa saling berkomunikasi/terhubung
+
+Network Driver:
+Saat kita membuat network di dalam docker, kita harus menggunakan driver. tetapi terkadang ada syarat sebuah driver network agar bisa digunakan
+
+-bridge = driver yang digunakan untuk membuat network secara virtual yang memungkinkan container yang terkoneksi di bridge network yang sama saling berkomunikasi
+-host = driver yang digunakan untuk membuat network yang sama dengan sistem host. host hanya dapat berjalan di sistem Linux, tidak untuk mac dan windows
+-none = driver yang digunakan untuk network yang tidak dapat berkomunikasi (Network default yang dibuat oleh docker)
+
+Perintah melihat network:
+docker network ls
+
+Perintah membuat network:
+docker network create --driver namaDriver namaNetwork
+*jika nama driver tidak disebutkan maka akan otomatis menggunakan driver bridge
+
+Perintah menghapus network:
+docker network rm namaNetwork
+*Network tidak bisa dihapus jika sudah digunakan oleh container. Kita harus menghapus containernya terlebih dahulu dari network

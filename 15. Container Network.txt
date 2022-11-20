@@ -1,0 +1,25 @@
+Container yang ada di dalam network yang sama bisa saling berkomunikasi (tergantung jenis drivernya)
+
+Container bisa mengakses container lain dengan menyebutkan hostname dari containernya, yaitu nama containernya
+
+Membuat container dengan network:
+docker container create --name namaContainer --network namaNetwork namaImage:tag
+
+Contoh:
+docker network create --driver bridge mongoNetwork
+
+docker container create --name MongoDb --network mongoNetwork --env MONGO_INITDB_ROOT_USERNAME=aldi --env MONGO_INITDB_ROOT_PASSWORD=aldi mongo:latest 
+
+docker image pull mongo-express:latest
+
+docker container create --name mongoExpress --network mongoNetwork --publish 8081:8081 --env ME_CONFIG_MONGODB_URL="mongodb://aldi:aldi@mongodb:27017/" mongo-express:latest
+
+docker container start MongoDb
+
+docker container start mongoExpress
+
+Menghapus container:
+docker network disconnect namaNetwork namaContainer
+
+Menambahkan container ke dalam network:
+docker network connect namaNetwork namaContainer
